@@ -16,8 +16,8 @@
             <th>Poste</th>
             <th>Salaire</th>
             <th>Datedenaissance</th>
-             <th>Editer</th>
-            <th>Supprimer</th>
+             <th>Option</th>
+            
          
             
         </tr>
@@ -38,8 +38,8 @@
              <td>{{employer.Datedenaissance|date("d/m/Y")}}</td>
              <td>
              <a href="{{path('data_edit',{id: employer.id})}}"  class="btn btn-info">Editer</a> 
-             </td>
-              <td>
+            
+              
              <a onclick="return confirm('Voulez-vous supprimer cet employer ?')" href="{{path('data_delete',{id: employer.id})}}"  class="btn btn-danger">Supprimer</a> 
              </td>
             

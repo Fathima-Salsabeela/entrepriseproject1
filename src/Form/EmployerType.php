@@ -21,6 +21,7 @@ class EmployerType extends AbstractType
             ->add('salaire')
             ->add('datedenaissance')
             
+            
 
         ;
     }

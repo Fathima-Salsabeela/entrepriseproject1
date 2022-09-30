@@ -2,10 +2,6 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
 <h1>
  
@@ -18,15 +14,28 @@
 </h1>
 
 
-{{form_start(form,)}}
+{{form_start(form,{
+    attr: {
+        novalidate: 'novalidate'
+    }
+})}}
+
+
 
 {{form_row(form.prenom)}}
+
 {{form_row(form.nom)}}
+
 {{form_row(form.telephone)}}
+
 {{form_row(form.email)}}
+
 {{form_row(form.address)}}
+
 {{form_row(form.poste)}}
+
 {{form_row(form.salaire)}}
+ 
 {{form_row(form.datedenaissance)}}
 
 <button type="submit" class ="btn btn-primary mt-2"> 
