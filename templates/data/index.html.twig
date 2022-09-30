@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Employer{% endblock %}
+
+{% block body %}
+<a class= "btn btn-success mt-2" href="{{path('data_new')}}">Ajout Employer</a>
+<table class="table">
+	<thead>
+		<tr>
+            <th>Id</th>
+            <th>Prenom</th>
+            <th>Nom</th>
+            <th>Telephone</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Poste</th>
+            <th>Salaire</th>
+            <th>Datedenaissance</th>
+             <th>Editer</th>
+            <th>Supprimer</th>
+         
+            
+        </tr>
+	</thead>
+	<tbody>
+       
+         <tr>
+             {% for employer in employer %}
+         <tr>
+             <td>{{employer.Id}}</td>
+             <td>{{employer.Prenom}}</td>
+             <td>{{employer.Nom}}</td>
+             <td>{{employer.Telephone}}</td>
+             <td>{{employer.Email}}</td>
+             <td>{{employer.Address}}</td>
+             <td>{{employer.Poste}}</td>
+             <td>{{employer.Salaire}}</td>
+             <td>{{employer.Datedenaissance|date("d/m/Y")}}</td>
+             <td>
+             <a href="{{path('data_edit',{id: employer.id})}}"  class="btn btn-info">Editer</a> 
+             </td>
+              <td>
+             <a onclick="return confirm('Voulez-vous supprimer cet employer ?')" href="{{path('data_delete',{id: employer.id})}}"  class="btn btn-danger">Supprimer</a> 
+             </td>
+            
+             
+
+         </tr>
+            
+        {% endfor %}
+
+         </tr>
+            
+        
+    </tbody>
+
+</table>
+{% endblock %}
