@@ -20,6 +20,8 @@ class EmployerType extends AbstractType
             ->add('poste')
             ->add('salaire')
             ->add('datedenaissance')
+            
+
         ;
     }
 
